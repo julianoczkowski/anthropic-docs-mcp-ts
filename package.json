@@ -1,6 +1,6 @@
 {
   "name": "@julianoczkowski/anthropic-docs-mcp-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for searching and fetching Anthropic documentation",
   "main": "dist/server.js",
   "type": "module",
