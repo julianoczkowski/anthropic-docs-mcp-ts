@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that provides comprehensive search and retrieval capabilities for Claude and Anthropic documentation, optimized for MCP development, APIs, examples, and templates.
 
+![Anthropic Docs MCP Server](assets/hero.png)
+
 ## Features
 
 - **Comprehensive Documentation Search**: Search through 100+ Claude documentation pages with intelligent relevance scoring
