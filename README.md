@@ -1,10 +1,13 @@
 # Anthropic Docs MCP Server
 
-A TypeScript Model Context Protocol (MCP) server that provides search and retrieval capabilities for Anthropic documentation within IDEs like Cursor and VS Code.
+A TypeScript Model Context Protocol (MCP) server that provides comprehensive search and retrieval capabilities for Claude and Anthropic documentation, optimized for MCP development, APIs, examples, and templates.
 
 ## Features
 
-- **Search Anthropic Documentation**: Search through Anthropic's documentation using natural language queries
+- **Comprehensive Documentation Search**: Search through 100+ Claude documentation pages with intelligent relevance scoring
+- **MCP Development Focus**: Optimized for MCP development, API integration, and tool building
+- **Multi-Strategy Search**: Direct crawling, DuckDuckGo, and alternative search engines with fallbacks
+- **Intelligent Relevance Scoring**: Results prioritized for MCP development, APIs, and examples
 - **Fetch Documentation Content**: Retrieve and clean documentation pages with intelligent content extraction
 - **IDE Integration**: Works seamlessly with Cursor and VS Code through MCP
 - **Dual Transport Support**: Supports both stdio (for IDE integration) and HTTP (for web clients)
@@ -14,39 +17,83 @@ A TypeScript Model Context Protocol (MCP) server that provides search and retrie
 
 ### `search_anthropic_docs`
 
-Search Anthropic documentation for a specific query.
+Search Claude and Anthropic documentation with intelligent relevance scoring optimized for MCP development, APIs, examples, and templates.
 
 **Parameters:**
 
-- `query` (string, required): Search query for Anthropic documentation
+- `query` (string, required): Search query for Claude documentation (supports MCP, API, SDK, and development-focused queries)
 - `max_results` (number, optional): Maximum number of results to return (1-10, default: 5)
 
 **Example:**
 
 ```json
 {
-  "query": "tool use beta",
+  "query": "MCP server development",
   "max_results": 3
 }
 ```
 
+**Search Optimization:**
+
+- Prioritizes MCP documentation and examples
+- Boosts relevance for API, SDK, and development content
+- Sorts results by relevance to your development needs
+- Covers 100+ documentation pages including MCP, Claude Code, APIs, and tools
+
 ### `fetch_doc`
 
-Fetch and clean a documentation page from a URL.
+Fetch and clean a documentation page from a URL with intelligent content extraction.
 
 **Parameters:**
 
-- `url` (string, required): URL of the documentation page to fetch
+- `url` (string, required): URL of the documentation page to fetch (supports docs.claude.com URLs)
 - `max_chars` (number, optional): Maximum characters to return (500-20000, default: 4000)
 
 **Example:**
 
 ```json
 {
-  "url": "https://docs.anthropic.com/claude/tools",
+  "url": "https://docs.claude.com/en/docs/agents-and-tools/mcp-connector",
   "max_chars": 2000
 }
 ```
+
+**Supported URLs:**
+
+- All docs.claude.com documentation pages
+- MCP documentation and guides
+- API references and examples
+- Claude Code documentation
+
+## Search Optimization
+
+This MCP server is specifically optimized for MCP development and provides intelligent search results:
+
+### **Priority Categories**
+
+1. **Core MCP Documentation** (Highest Priority)
+2. **Claude Code MCP Integration**
+3. **API Documentation**
+4. **SDK and Development Tools**
+5. **Tool Use and Examples**
+6. **Prompt Engineering and Templates**
+7. **Resources and Examples**
+8. **Advanced Features**
+9. **Security and Best Practices**
+10. **Integration and Deployment**
+
+### **Relevance Scoring**
+
+- **MCP keywords** (+25 points): mcp, model context protocol, server, client, tool, api
+- **Development keywords** (+15 points): sdk, python, typescript, javascript, example, template, guide, tutorial
+- **API keywords** (+10 points): api, endpoint, request, response, authentication, key
+- **URL path priority**: MCP docs get highest priority, followed by SDK and API documentation
+
+### **Search Strategies**
+
+1. **Direct Crawling** (Primary): Searches 100+ curated documentation pages
+2. **DuckDuckGo** (Fallback): External search with multiple selectors
+3. **Alternative Engine** (Backup): Bing search as final fallback
 
 ## Installation
 
@@ -192,10 +239,12 @@ anthropic-docs-mcp-ts/
 ### Key Components
 
 - **MCP Server**: Uses the modern `McpServer` class from the MCP SDK
-- **Search Engine**: Integrates with DuckDuckGo to search Anthropic documentation
+- **Multi-Strategy Search**: Direct crawling, DuckDuckGo, and alternative search engines with intelligent fallbacks
+- **Relevance Scoring**: Advanced scoring system that prioritizes MCP development, APIs, and examples
 - **Content Processing**: Uses Cheerio for intelligent HTML parsing and content extraction
 - **Transport Layer**: Supports both stdio and HTTP transports
 - **Input Validation**: Uses Zod for robust input validation
+- **Comprehensive Coverage**: 100+ curated documentation URLs organized by development priority
 
 ## Development
 
@@ -237,6 +286,8 @@ anthropic-docs-mcp-ts/
 2. **Tools not appearing in IDE**: Make sure the project is built with `npm run build`
 3. **Search returns no results**: Check your internet connection and try different search terms
 4. **HTTP transport issues**: Ensure the port is available and not blocked by firewall
+5. **MCP connection issues**: Restart Cursor/VS Code to pick up new MCP server builds
+6. **Old URLs in results**: The server uses docs.claude.com - both docs.anthropic.com and docs.claude.com redirect to the same content
 
 ### Debug Mode
 
