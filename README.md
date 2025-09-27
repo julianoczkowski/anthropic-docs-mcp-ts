@@ -20,6 +20,12 @@ Install the package globally from NPM:
 npm install -g @julianoczkowski/anthropic-docs-mcp-ts
 ```
 
+or
+
+```bash
+sudo npm install -g @julianoczkowski/anthropic-docs-mcp-ts
+```
+
 ## IDE Integration
 
 ### Cursor Configuration
