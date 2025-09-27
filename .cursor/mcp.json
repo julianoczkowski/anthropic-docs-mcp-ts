@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "anthropic-docs": {
+      "command": "node",
+      "args": ["${workspaceFolder}/dist/server.js", "--transport", "stdio"]
+    }
+  }
+}

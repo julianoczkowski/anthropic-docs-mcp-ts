@@ -1,0 +1,36 @@
+{
+  "name": "anthropic-docs-mcp-ts",
+  "version": "0.1.0",
+  "description": "MCP server for searching and fetching Anthropic documentation",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts --transport stdio",
+    "dev:http": "tsx src/server.ts --transport http --port 8974",
+    "build": "tsc",
+    "start": "node dist/server.js --transport stdio",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "anthropic",
+    "documentation",
+    "search",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  }
+}
