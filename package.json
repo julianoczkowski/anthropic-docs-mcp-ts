@@ -1,26 +1,49 @@
 {
-  "name": "anthropic-docs-mcp-ts",
+  "name": "@julianoczkowski/anthropic-docs-mcp-ts",
   "version": "0.1.0",
   "description": "MCP server for searching and fetching Anthropic documentation",
   "main": "dist/server.js",
   "type": "module",
+  "bin": {
+    "anthropic-docs-mcp": "dist/server.js"
+  },
   "scripts": {
     "dev": "tsx src/server.ts --transport stdio",
     "dev:http": "tsx src/server.ts --transport http --port 8974",
     "build": "tsc",
     "start": "node dist/server.js --transport stdio",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist/",
+    "README.md",
+    "package.json"
+  ],
   "keywords": [
     "mcp",
+    "model-context-protocol",
     "anthropic",
     "documentation",
     "search",
+    "fetch",
     "typescript"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Julian Oczkowski",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianoczkowski/anthropic-docs-mcp-ts.git"
+  },
+  "homepage": "https://github.com/julianoczkowski/anthropic-docs-mcp-ts#readme",
+  "bugs": {
+    "url": "https://github.com/julianoczkowski/anthropic-docs-mcp-ts/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
+    "@julianoczkowski/anthropic-docs-mcp-ts": "file:julianoczkowski-anthropic-docs-mcp-ts-0.1.0.tgz",
     "@modelcontextprotocol/sdk": "^1.18.2",
     "cheerio": "^1.1.2",
     "express": "^5.1.0",
