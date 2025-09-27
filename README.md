@@ -75,10 +75,12 @@ For VS Code with MCP extension, add to your MCP configuration:
 Search Claude and Anthropic documentation with intelligent relevance scoring optimized for MCP development, APIs, examples, and templates.
 
 **Parameters:**
+
 - `query` (string, required): Search query for Claude documentation
 - `max_results` (number, optional): Maximum number of results to return (1-10, default: 5)
 
 **Example:**
+
 ```json
 {
   "query": "MCP server development",
@@ -91,10 +93,12 @@ Search Claude and Anthropic documentation with intelligent relevance scoring opt
 Fetch and clean a documentation page from a URL with intelligent content extraction.
 
 **Parameters:**
+
 - `url` (string, required): URL of the documentation page to fetch
 - `max_chars` (number, optional): Maximum characters to return (500-20000, default: 4000)
 
 **Example:**
+
 ```json
 {
   "url": "https://docs.claude.com/en/docs/agents-and-tools/mcp-connector",
@@ -138,17 +142,19 @@ Once configured in your IDE, you can use the tools in your conversations:
 
 ### Common Issues
 
-1. **Tools not appearing in IDE**: 
+1. **Tools not appearing in IDE**:
+
    - Ensure the package is installed globally: `npm install -g @julianoczkowski/anthropic-docs-mcp-ts`
    - Check your MCP configuration file syntax
    - Restart your IDE after configuration changes
 
-2. **Search returns no results**: 
+2. **Search returns no results**:
+
    - Check your internet connection
    - Try different search terms
    - The server uses multiple search strategies with fallbacks
 
-3. **MCP connection issues**: 
+3. **MCP connection issues**:
    - Verify the `anthropic-docs-mcp` command works in your terminal
    - Check that the configuration file path is correct
    - Restart your IDE to pick up configuration changes
